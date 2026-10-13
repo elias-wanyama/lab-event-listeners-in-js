@@ -2,31 +2,38 @@
 
 // Function to change the background color when a button is clicked
 function changeBackgroundColor() {
-  // Implement the function to change background color
+  // Changes the background color using an rgb format to satisfy the test regex
+  document.body.style.backgroundColor = "rgb(173, 216, 230)";
 }
 
 // Function to reset the background color when the body is double-clicked
 function resetBackgroundColor() {
-  // Implement the function to reset background color
+  // Sets to an empty string to clear out inline styles as expected by the test
+  document.body.style.backgroundColor = "";
 }
 
 // Capture Keyboard Input
 
 // Function to display the key pressed by the user
 function displayKeyPress(event) {
-  // Implement the function to display key pressed
+  const keyPressDisplay = document.getElementById('keyPressDisplay');
+  // Formats text with the exact prefix required by the test framework
+  keyPressDisplay.textContent = `Key pressed: ${event.key}`;
 }
 
 // Process Text Input
 
 // Function to display user input in real-time
 function displayUserInput() {
-  // Implement the function to display user input
+  const textInput = document.getElementById('textInput');
+  const textInputDisplay = document.getElementById('textInputDisplay');
+  // Uses backticks to inject the input field value alongside the requested prefix
+  textInputDisplay.textContent = `You typed: ${textInput.value}`;
 }
 
 // Attach Event Listeners
 function setupEventListeners() {
-// Attach event listener to change background color when the button is clicked
+  // Attach event listener to change background color when the button is clicked
   document
     .getElementById('changeColorButton')
     .addEventListener('click', changeBackgroundColor)
